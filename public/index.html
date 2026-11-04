@@ -1,120 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSL WebSocket Test Client</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        #status {
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            background-color: #f0f0f0;
-        }
-        #controls {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        input[type="text"] {
-            flex-grow: 1;
-            padding: 8px;
-        }
-        button {
-            padding: 8px 16px;
-            cursor: pointer;
-        }
-        #log {
-            border: 1px solid #ccc;
-            height: 250px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #fafafa;
-            font-family: monospace;
-        }
-        .sent { color: #0066cc; }
-        .received { color: #008800; }
-        .system { color: #888888; font-style: italic; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tito G. Crisol Jr. | Portfolio</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    header {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+    h1 {
+      margin: 0 0 10px 0;
+      color: var(--primary);
+      font-size: 2.2rem;
+    }
+    .subtitle {
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+    section {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+    h2 {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+      margin-top: 0;
+      color: var(--dark);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .skill-card {
+      background: #f1f5f9;
+      padding: 12px 15px;
+      border-radius: 6px;
+      border-left: 4px solid var(--primary);
+    }
+    .project-card {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact-links p {
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
 
-    <h2>BSL WebSocket Client</h2>
-    <div id="status">Status: Connecting...</div>
+  <div class="container">
+    
+    <!-- HEADER / PROFILE SUMMARY -->
+    <header>
+      <h1>Tito G. Crisol Jr.</h1>
+      <div class="subtitle">Aspiring Network Engineer & Web Developer</div>
+      <p>
+        I am a dedicated Network student passionate about building reliable network infrastructures and modern web applications. Driven by a goal to secure roles in network administration, hardware integration, or full-stack web development, I combine foundational networking principles with clean frontend design.
+      </p>
+    </header>
 
-    <div id="controls">
-        <input type="text" id="msgInput" placeholder="Enter message..." disabled />
-        <button id="sendBtn" disabled>Send</button>
-    </div>
+    <!-- SKILLS & TECHNOLOGIES -->
+    <section id="skills">
+      <h2>Skills & Technologies</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <strong>Networking Fundamentals</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">TCP/IP, IPv4/IPv6 Subnetting, Routing & Switching</p>
+        </div>
+        <div class="skill-card">
+          <strong>Web Development</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">HTML5, CSS3, JavaScript (ES6+)</p>
+        </div>
+        <div class="skill-card">
+          <strong>Network Tools</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">Cisco Packet Tracer, Wireshark, CLI</p>
+        </div>
+        <div class="skill-card">
+          <strong>Version Control</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">Git & GitHub Workflow</p>
+        </div>
+        <div class="skill-card">
+          <strong>Communication & Accessibility</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">British Sign Language (BSL), Web Accessibility</p>
+        </div>
+        <div class="skill-card">
+          <strong>Systems & Hardware</strong>
+          <p style="margin: 5px 0 0; font-size: 0.9rem; color: var(--gray);">OS Installation, System Maintenance, Troubleshooting</p>
+        </div>
+      </div>
+    </section>
 
-    <div id="log"></div>
+    <!-- PROJECTS & ACHIEVEMENTS -->
+    <section id="projects">
+      <h2>Projects & Achievements</h2>
+      
+      <div class="project-card">
+        <h3>1. Small Office Network Topology Simulation</h3>
+        <p>
+          Designed and configured a multi-router LAN/WAN network infrastructure using Cisco Packet Tracer. Implemented VLAN segmentation, DHCP pool setup, and basic firewall security rules to facilitate safe inter-departmental communication.
+        </p>
+      </div>
 
-    <script>
-        const wsUrl = "ws://localhost:8000";
-        const socket = new WebSocket(wsUrl);
+      <div class="project-card">
+        <h3>2. Personal Developer & Networking Portfolio</h3>
+        <p>
+          Developed a clean, mobile-responsive portfolio website using HTML5, CSS3, and JavaScript. Built to showcase technical skills, networking project configurations, and online resources for fast client and recruiter access.
+        </p>
+      </div>
+    </section>
 
-        const statusDiv = document.getElementById("status");
-        const logDiv = document.getElementById("log");
-        const msgInput = document.getElementById("msgInput");
-        const sendBtn = document.getElementById("sendBtn");
+    <!-- CONTACT INFORMATION -->
+    <section id="contact">
+      <h2>Contact Information</h2>
+      <div class="contact-links">
+        <p><strong>Email:</strong> <a href="mailto:titogcrisoljr@gmail.com">titogcrisoljr@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/crisoulneedsjob22" target="_blank">https://github.com/crisoulneedsjob22</a></p>
+      </div>
+    </section>
 
-        function appendLog(text, className) {
-            const entry = document.createElement("div");
-            entry.className = className;
-            entry.textContent = text;
-            logDiv.appendChild(entry);
-            logDiv.scrollTop = logDiv.scrollHeight;
-        }
-
-        socket.onopen = function() {
-            statusDiv.textContent = "Status: Connected to " + wsUrl;
-            statusDiv.style.backgroundColor = "#d4edda";
-            statusDiv.style.color = "#155724";
-            msgInput.disabled = false;
-            sendBtn.disabled = false;
-            appendLog("[System] Handshake complete. WebSocket ready.", "system");
-        };
-
-        socket.onmessage = function(event) {
-            appendLog("[Server] " + event.data, "received");
-        };
-
-        socket.onclose = function(event) {
-            statusDiv.textContent = "Status: Disconnected";
-            statusDiv.style.backgroundColor = "#f8d7da";
-            statusDiv.style.color = "#721c24";
-            msgInput.disabled = true;
-            sendBtn.disabled = true;
-            appendLog("[System] Connection closed by server.", "system");
-        };
-
-        socket.onerror = function(error) {
-            appendLog("[Error] WebSocket error occurred.", "system");
-        };
-
-        function sendMessage() {
-            const text = msgInput.value.trim();
-            if (text.length > 0 && socket.readyState === WebSocket.OPEN) {
-                socket.send(text);
-                appendLog("[Client] " + text, "sent");
-                msgInput.value = "";
-            }
-        }
-
-        sendBtn.addEventListener("click", sendMessage);
-        msgInput.addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                sendMessage();
-            }
-        });
-    </script>
+  </div>
 
 </body>
 </html>
